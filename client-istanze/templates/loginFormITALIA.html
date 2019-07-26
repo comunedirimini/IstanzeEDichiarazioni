@@ -1,0 +1,48 @@
+<section>
+
+<div class="u-layout-wide u-layoutCenter u-layout-withGutter u-padding-all-xl u-padding-r-top u-padding-bottom-xxl">
+          
+    <h1 class="u-text-h2">Richiesta autenticazione utente attraverso SPID/FEDERA</h1>
+        <article class="Prose">
+         
+        <div ng-if="!isAuthenticated()">
+
+        <h3>L'invio della presente istanza richiede l'autenticazione mediante SPID o FEDERA</h3>
+        <h3>Cliccando il bottone seguente è possibile accedere al portale per l'autenticazione SPID o FEDERA</h3>
+        <a class="Button Button--default u-text-r-xs u-inlineBlock btn-block" href="{{fullApiEndpoint}}">
+            <i class="ion-social-linkedin"></i>LOG IN con SPID o FEDERA
+        </a>
+
+        <hr>
+
+        <h1 class="u-text-h2">Informazioni</h1>
+
+             <h3>In caso non si disponesse di un account valido SPID o FEDERA qui di seguito si trovano le istruzione per otterli</h3>
+
+<a class="Button Button--default u-text-r-xs u-inlineBlock btn-block" href="https://www.spid.gov.it/">COME OTTENERE UN ACCOUNT ACCOUNT SPID</a> 
+<hr>
+<a class="Button Button--default u-text-r-xs u-inlineBlock btn-block" href=" http://federazione.lepida.it/ ">COME OTTENERE UN ACCOUNT FEDERA</a>
+
+
+
+        </div>
+
+        <div ng-if="isAuthenticated()">
+            <div class="Prose Alert Alert--success" role="alert">
+              <p class="u-text-r-m">L'account utilizzato non risulta più valido oppure è scaduto.</p>
+              <p class="u-text-r-m">E' necessaria eseguire l'autenticazione a SPID/FEDERA</p>
+              <button class="Button Button--default u-text-r-xs u-inlineBlock btn-block" ng-click="logout('')">
+                RIACCEDERE A SPID/FEDERA
+              </button>
+            </div>
+          </div>
+
+    <!--
+          <p>Rinnova login gateway</p>
+          <button class="Button Button--info u-text-r-xs" ng-click="newGatewayFederaUrl()">
+            RE-GET
+          </button>
+        -->
+        </article>
+</div>        
+</section>

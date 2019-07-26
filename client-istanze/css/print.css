@@ -1,0 +1,60 @@
+
+
+@media print {
+
+    
+
+
+@page {
+        size: A4 portrait;
+        margin: 10%;
+}
+
+
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+#header-widgets, header, Offcanvas, nav, aside.mashsb-container, 
+.sidebar, .mashshare-top, .mashshare-bottom, menu, #menu,
+.content-ads, .make-comment, .author-bio, 
+.heading, .related-posts, #decomments-form-add-comment, 
+#breadcrumbs, #footer, .post-byline, .meta-single, 
+.site-title img, .post-tags, .readability 
+{
+display: none !important;
+}
+
+#topHeader , #menu { display: none !important; }
+
+
+
+
+
+
+/*
+h1 { font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } 
+h2 { font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } 
+h3 { font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; } 
+h4 { font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } 
+p { font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } 
+*/
+
+
+    
+
+#printMessage:before {
+    content: "\ Dichiarazione firmata data _________________________________ firma _______________________________";
+    font-size: 12pt;
+    font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace; 
+    font-size: 12px; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 400; 
+    text-align: center !important;    
+}
+
+
+
+}

@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)http://localhost:8009/cli/#!/eseguiIstanzaDinamica/DINPI02 -->
+<html>
+	<head>
+  
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+  <link media="print" rel="stylesheet" href="./css/print.css">
+  
+
+
+
+  <title>Portale Istanze</title>
+</head>
+
+<body class="t-Pac ng-scope enhanced" ng-app="myApp" ng-controller="AppCtrl" style="padding-top: 107px;"><a id="topPosition"></a>
+
+<header class="Header Headroom--fixed js-Headroom u-hiddenPrint Headroom Headroom--pinned Headroom--top Headroom--bottom" style="position: fixed; top: 0px;">
+
+  <div class="Header-navbar Grid Grid--alignMiddle">
+    <div class="Header-toggle Grid-cell">
+      <a class="Hamburger-toggleContainer js-fr-offcanvas-open u-nojsDisplayInlineBlock" href="http://localhost:8009/cli/#menu" aria-controls="menu" aria-label="accedi al menu" title="accedi al menu">
+        <span class="Hamburger-toggle" role="presentation"></span>
+        <span class="Header-toggleText" role="presentation">Menu</span>
+      </a>
+    </div>
+
+    <div class="Header-logo Grid-cell" aria-hidden="true">
+      <a href="http://localhost:8009/cli/" tabindex="-1">
+        
+      </a>
+    </div>
+
+    <div class="Header-title Grid-cell">
+      <h1 class="Header-titleLink">
+        <a href="http://localhost:8009/">
+           Comune di Rimini / Portale Istanze <br>
+          <small></small>
+        </a>
+      </h1>
+    </div>
+
+    <!--
+    <div class="Header-searchTrigger Grid-cell">
+      <button aria-controls="header-search" class="js-Header-search-trigger Icon Icon-search"
+        title="attiva il form di ricerca" aria-label="attiva il form di ricerca" aria-hidden="false">
+      </button>
+      <button aria-controls="header-search" class="js-Header-search-trigger Icon Icon-close u-hidden"
+        title="disattiva il form di ricerca" aria-label="disattiva il form di ricerca" aria-hidden="true">
+      </button>
+    </div>
+
+  -->
+
+    <div class="Header-utils Grid-cell">
+
+<!--
+
+      <div class="Header-search" id="header-search">
+        <form class="Form">
+  <div class="Form-field Form-field--withPlaceholder Grid" role="search">
+    <input class="Form-input Grid-cell u-sizeFill u-text-r-s" required id="cerca">
+    <label class="Form-label" for="cerca">Cerca...</label>
+    <button class="Grid-cell u-sizeFit Icon-search u-background-60 u-color-white u-padding-all-s u-textWeight-700"
+      title="Avvia la ricerca" aria-label="Avvia la ricerca">
+    </button>
+  </div>
+</form>
+
+-->
+
+      </div>
+    </div>
+  
+  <!-- Header-navbar -->
+  
+</header>
+
+<section class="Offcanvas Offcanvas--left Offcanvas--modal js-fr-offcanvas u-jsVisibilityHidden u-nojsDisplayNone u-hiddenPrint is-ready" id="menu" aria-hidden="true">
+	<h2 class="u-hiddenVisually">Menu di navigazione</h2>
+  <div class="Offcanvas-content u-background-white">
+    <div class="Offcanvas-toggleContainer u-background-70 u-jsHidden">
+      <a class="Hamburger-toggleContainer u-block u-color-white u-padding-bottom-xxl u-padding-left-s u-padding-top-xxl js-fr-offcanvas-close" aria-controls="menu" aria-label="esci dalla navigazione" title="esci dalla navigazione" href="http://localhost:8009/cli/#">
+        <span class="Hamburger-toggle is-active" aria-hidden="true"></span>
+      </a>
+    </div>
+
+    
+    <!-- <nav ng-controller="SNavbarCtrl"> -->
+    <nav>
+			<ul class="Linklist Linklist--padded Treeview Treeview--default js-Treeview u-text-r-xs" role="tree">
+        <ul data-megamenu-class="u-columns-2" role="group">
+          <li role="treeitem"><a ui-sref="homeIstanze" href="http://localhost:8009/cli/#!/homeIstanze">Home</a></li>
+          <li role="treeitem"><a ui-sref="profile" href="http://localhost:8009/cli/#!/profile">Profilo</a></li>
+          <!--
+          <li><a ui-sref="eseguiIstanza({id: '100'})" >Esegui Istanza 100</a></li>
+          <li><a ui-sref="elencoIstanze" >Elenco Istanze</a></li>
+          <li><a ui-sref="sid24p" >Sid F24 pagamenti</a></li>
+          <li><a ui-sref="anagraficaDemanio" >Anagrafica</a></li>
+          <li><a ui-sref="profile">Profilo-1</a></li>
+          <li><a ui-sref="login">Login</a></li>
+          <li><a ui-sref="signup">Registrazione</a></li>
+          <li><a ui-sref="multistep.profile">Multistep</a></li>
+          <li><a ui-sref="consultazione">Consultazione</a></li>
+          <li ng-if="isAuthenticated()"><a ui-sref="profile">Profilo</a></li>
+          <li ng-if="!isAuthenticated()"><a ui-sref="login" ui-sref-active="active">Accedi</a></li>
+          <li ng-if="isAuthenticated()"><a ui-sref="logout" ui-sref-active="active">Esci</a></li>
+          -->
+        </ul>
+      </ul>
+    </nav>
+
+  </div>
+</section>
+
+
+    <span class="centeredspin ng-scope" us-spinner="{radius:30, width:8, length: 16, position: relative}" spinner-key="spinner-1"></span>
+    <div role="main" id="main">
+      <!-- uiView: --><section ui-view="" class="ng-scope" style=""><!-- ngIf: iC.statoIstanza === 100 -->
+
+
+<!-- ngIf: iC.statoIstanza === 0 -->
+
+
+<!-- ngIf: iC.contattiFooter -->  
+  
+ 
+<!-- ngIf: iC.statoIstanza === 200 --><div ng-if="iC.statoIstanza === 200" class="Alert Alert--success ng-scope" style="">
+        <h1>Comune di Rimini - Notifica ricezione istanza</h1>
+        <h3 class="ng-binding">Istanza ricevuta con successo!</h3>
+     
+	 <h4 class="ng-binding">Promemoria - Presentazione Istanza. Con la presente si conferma la ricezione della istanza presentata.
+Prendere nota degli estremi di protocollo per riferimenti futuri.
+Per ogni informazione sul procedimento rivolgersi a: ___ ____ 0541/70 000 000
+
+</h4>    
+        
+        <h3>Riferimenti di protocollo</h3>
+        <table border="1">
+        <tbody><tr>
+          <td>Anno</td>
+          <td class="ng-binding">2018</td>
+        </tr>
+        <tr>
+            <td>Numero</td>
+            <td class="ng-binding">3</td>
+        </tr>
+        <tr>
+            <td>Data</td>
+            <td class="ng-binding">2018-02-07T11:35:54.333Z</td>
+          </tr>
+    
+        </tbody></table>
+
+   
+  
+      
+        <h3>Riepilogo dati inseriti:</h3>
+       
+
+        <table border="1">
+          <tbody>
+        <!-- ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">accettazioneInformativa</td>
+            <td class="ng-binding">true</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dichiaranteNome</td>
+            <td class="ng-binding">MARIOD</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dichiaranteCognome</td>
+            <td class="ng-binding">ROSSID</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dichiaranteComuneNascita</td>
+            <td class="ng-binding">RIMINID</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dichiaranteDataNascita</td>
+            <td class="ng-binding">01/01/1960</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dichiaranteIndirizzoResidenza</td>
+            <td class="ng-binding">VIA ROMA 1, 47900</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">accettazioneRichiestaIscrizioneElencoSoggettiGestori</td>
+            <td class="ng-binding">true</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dichiaranteComuneResidenza</td>
+            <td class="ng-binding">RIMINIDR</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dichiaranteCellularePrincipale</td>
+            <td class="ng-binding">33512345678</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dichiaranteEmail</td>
+            <td class="ng-binding">ruggero.ruggeri@comune.rimini.it</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dittaRappresentanteLegale</td>
+            <td class="ng-binding">ROSSI &amp; BIANCHI S.N.C.</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dittaComune</td>
+            <td class="ng-binding">RIMINI</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dittaIndirizzo</td>
+            <td class="ng-binding">VIA ROMA 11 - 46756</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dittaCFPIVA</td>
+            <td class="ng-binding">123456487911</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dittaNumeroTelefono</td>
+            <td class="ng-binding">052264566</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dichiaranteEmailPEC</td>
+            <td class="ng-binding">aaaa@aaa.pec.it</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dichiaranteCentroEstivoGestitoDenominazione</td>
+            <td class="ng-binding">CENTRO ESTIVO RIMINI MARE</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dichiaranteCentroEstivoGestitoUbicazione</td>
+            <td class="ng-binding">NAPOLI</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dichiaranteCentroEstivoIndirizzo</td>
+            <td class="ng-binding">VIA RIMINI 33, 47900</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dichiarazioneLegaleRappresentanzaDittaIndicata</td>
+            <td class="ng-binding">true</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dichiarazioneStatoPresentazioneScia</td>
+            <td class="ng-binding">SCIA_NON_PRESENTATA</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dichiarazioneDataPresentazioneScia</td>
+            <td class="ng-binding">01/01/2000</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dichiarazioneEsperienzaPregressa</td>
+            <td class="ng-binding">true</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dichiarazioneComunePresentazioneSciaEsperienzaPregressa</td>
+            <td class="ng-binding">COMUNE DI BELLARIA IGEA MARINA</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dichiarazioneDataPresentazioneSciaEsperienzaPregressa</td>
+            <td class="ng-binding">05/08/2016</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dichiarazionePeriodoAttivitaServizio</td>
+            <td class="ng-binding">true</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dichiaranteDataInizioServizio</td>
+            <td class="ng-binding">01/01/2000</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dichiaranteDataFineServizio</td>
+            <td class="ng-binding">31/10/2020</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dichiaranteSettimaneChiusuraServizio</td>
+            <td class="ng-binding">33</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dichiarazioneGaranziaServiziMinimi</td>
+            <td class="ng-binding">true</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dichiarazioneInformativaControlliComuneRegione</td>
+            <td class="ng-binding">true</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dichiarazioneImpegnoComunicazioneMinoriAmmessi</td>
+            <td class="ng-binding">true</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dichiarazioneImpegnoComunicazioneRitiri</td>
+            <td class="ng-binding">true</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dichiarazioneImpegnoComunicazioneFrequenza</td>
+            <td class="ng-binding">true</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dichiarazioneImpegnoComunicazioneQuietanza</td>
+            <td class="ng-binding">true</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">svgCaptchaResponse</td>
+            <td class="ng-binding">73</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">reqId</td>
+            <td class="ng-binding">20190319@183221@603@97701</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">files</td>
+            <td class="ng-binding">[]</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">idProtocollo</td>
+            <td class="ng-binding">6658846</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">annoProtocollo</td>
+            <td class="ng-binding">2018</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">numeroProtocollo</td>
+            <td class="ng-binding">3</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dataProtocollo</td>
+            <td class="ng-binding">2018-02-07T11:35:54.333Z</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg -->
+        <!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">files</td>
+            <td class="ng-binding">[]</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">idProtocollo</td>
+            <td class="ng-binding">6658846</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">annoProtocollo</td>
+            <td class="ng-binding">2018</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">numeroProtocollo</td>
+            <td class="ng-binding">3</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dataProtocollo</td>
+            <td class="ng-binding">2018-02-07T11:35:54.333Z</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg -->
+        <!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">files</td>
+            <td class="ng-binding">[]</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">idProtocollo</td>
+            <td class="ng-binding">6658846</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">annoProtocollo</td>
+            <td class="ng-binding">2018</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">numeroProtocollo</td>
+            <td class="ng-binding">3</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dataProtocollo</td>
+            <td class="ng-binding">2018-02-07T11:35:54.333Z</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg -->
+        <!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">files</td>
+            <td class="ng-binding">[]</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">idProtocollo</td>
+            <td class="ng-binding">6658846</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">annoProtocollo</td>
+            <td class="ng-binding">2018</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">numeroProtocollo</td>
+            <td class="ng-binding">3</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dataProtocollo</td>
+            <td class="ng-binding">2018-02-07T11:35:54.333Z</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg -->
+        <!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">files</td>
+            <td class="ng-binding">[]</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">idProtocollo</td>
+            <td class="ng-binding">6658846</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">annoProtocollo</td>
+            <td class="ng-binding">2018</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">numeroProtocollo</td>
+            <td class="ng-binding">3</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dataProtocollo</td>
+            <td class="ng-binding">2018-02-07T11:35:54.333Z</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg -->
+        <!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">files</td>
+            <td class="ng-binding">[]</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">idProtocollo</td>
+            <td class="ng-binding">6658846</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">annoProtocollo</td>
+            <td class="ng-binding">2018</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">numeroProtocollo</td>
+            <td class="ng-binding">3</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dataProtocollo</td>
+            <td class="ng-binding">2018-02-07T11:35:54.333Z</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg -->
+        <!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">files</td>
+            <td class="ng-binding">[]</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">idProtocollo</td>
+            <td class="ng-binding">6658846</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">annoProtocollo</td>
+            <td class="ng-binding">2018</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">numeroProtocollo</td>
+            <td class="ng-binding">3</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dataProtocollo</td>
+            <td class="ng-binding">2018-02-07T11:35:54.333Z</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg -->
+        <!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">files</td>
+            <td class="ng-binding">[]</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">idProtocollo</td>
+            <td class="ng-binding">6658846</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">annoProtocollo</td>
+            <td class="ng-binding">2018</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">numeroProtocollo</td>
+            <td class="ng-binding">3</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dataProtocollo</td>
+            <td class="ng-binding">2018-02-07T11:35:54.333Z</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg -->
+        <!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">files</td>
+            <td class="ng-binding">[]</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">idProtocollo</td>
+            <td class="ng-binding">6658846</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">annoProtocollo</td>
+            <td class="ng-binding">2018</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">numeroProtocollo</td>
+            <td class="ng-binding">3</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dataProtocollo</td>
+            <td class="ng-binding">2018-02-07T11:35:54.333Z</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg -->
+        <!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">files</td>
+            <td class="ng-binding">[]</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">idProtocollo</td>
+            <td class="ng-binding">6658846</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">annoProtocollo</td>
+            <td class="ng-binding">2018</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">numeroProtocollo</td>
+            <td class="ng-binding">3</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dataProtocollo</td>
+            <td class="ng-binding">2018-02-07T11:35:54.333Z</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg -->
+        <!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">files</td>
+            <td class="ng-binding">[]</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">idProtocollo</td>
+            <td class="ng-binding">6658846</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">annoProtocollo</td>
+            <td class="ng-binding">2018</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">numeroProtocollo</td>
+            <td class="ng-binding">3</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg --><tr ng-repeat="(attribute, value) in iC.successMsg" class="ng-scope">
+            <td class="ng-binding">dataProtocollo</td>
+            <td class="ng-binding">2018-02-07T11:35:54.333Z</td>
+        </tr><!-- end ngRepeat: (attribute, value) in iC.successMsg -->
+        
+        </tbody></table>
+
+        <div id="printMessage"></div>
+
+
+</div><!-- end ngIf: iC.statoIstanza === 200 -->
+
+<!-- ngIf: iC.statoIstanza > 200 -->
+
+<!-- ngIf: iC.statoIstanza === 199 -->
+   </section>
+    </div>
+
+  <!--[if IE 8]>
+  <script src="vendor/respond.min.js"></script>
+  <script src="vendor/rem.min.js"></script>
+  <script src="vendor/selectivizr.js"></script>
+  <script src="vendor/slice.js"></script>
+  <![endif]-->
+
+  <!--[if lte IE 9]>
+  <script src="vendor/polyfill.min.js"></script>
+  <![endif]-->
+
+
+
+<!--
+
+<footer class="Footer">
+
+    <div class="u-cf">
+        <p class="Footer-siteName">
+            Comune di Rimini
+        </p>
+    </div>
+
+    <div class="Grid Grid--withGutter">
+
+             <div class="Footer-block Grid-cell u-md-size1of4 u-lg-size1of4">
+            <h2 class="Footer-blockTitle">Contatti</h2>
+            <div class="Footer-subBlock">
+                <h3 class="Footer-subTitle">Recapiti</h3>
+                <address>
+          Via quae qui et<br>
+          quae qui et<br>
+          Tel. (+00) 00.0000.0000
+        </address>
+            </div>
+        </div>
+
+        <div class="Footer-block Grid-cell u-md-size1of4 u-lg-size1of4">
+            <h2 class="Footer-blockTitle">Contatti</h2>
+            <div class="Footer-subBlock">
+                <h3 class="Footer-subTitle">Recapiti</h3>
+                <address>
+          Via laborum neque nemo<br>
+          laborum neque nemo<br>
+          Tel. (+00) 00.0000.0000
+        </address>
+            </div>
+        </div>
+
+        <div class="Footer-block Grid-cell u-md-size1of4 u-lg-size1of4">
+            <h2 class="Footer-blockTitle">Contatti</h2>
+            <div class="Footer-subBlock">
+                <h3 class="Footer-subTitle">Indirizzo PEC</h3>
+                <p><a href="">indirizzo.pec@gov.it</a></p>
+            </div>
+        </div>
+
+     
+    </div>
+
+    <ul class="Footer-links u-cf">
+        <li><a href="" title="Privacy policy">Privacy</a></li>
+        <li><a href="" title="Note legali">Note legali</a></li>
+        <li><a href="" title="Dati monitoraggio sito">Contatti</a></li>
+    </ul>
+
+</footer>
+-->
+
+<!-- build:js iwt.js -->
+
+<!-- endbuild -->
+
+<!-- ngIf: browserName != 'Chrome' -->
+
+
+
+</body></html>

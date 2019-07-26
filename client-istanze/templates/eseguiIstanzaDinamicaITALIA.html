@@ -1,0 +1,146 @@
+<section ng-if="iC.statoIstanza === 100">
+    <div class="u-layout-wide u-layoutCenter u-layout-withGutter u-padding-all-xl u-padding-r-top u-padding-bottom-xxl">
+    <h1 class="u-text-h2">Informativa sul trattamento dei cookies</h1>
+    <p class="u-text-r-m">I cookies sono piccoli file di testo che i siti visitati inviano al terminale dell’Utente, dove vengono memorizzati, per poi essere ritrasmessi agli stessi siti alla visita successiva.</p>
+    <h2 class="u-text-h3 u-color-90 u-padding-r-top">Questo sito utilizza un solo cookie tecnico denominato "_csrf" che permette di rendere sicuro l'invio del presente modulo evitando tentativi di frode.</h2>
+    <p class="u-text-r-m">ATTENZIONE DISABILITANDO L'USO DEI COOKIE SI PERDONO LE GARANZIE DI SICUREZZA NECESSARIE ALL'USO DI QUESTA PIATTAFORMA E DI FATTO E' IMPOSSIBILE PROSEGUIRNE NELL'UTILIZZO.</p>
+    <p class="u-text-h3 u-color-90 u-padding-r-top">Per poter proseguire è necessario accettare l'uso dei cookies cliccando il bottone qui sotto.</p>
+    </h2>
+    <button class="Button Button--default u-text-r-xs u-inlineBlock btn-block"
+            ng-click="acceptCookiePolicy()"
+        >Accetto</button>
+
+    </div>
+</section>
+
+
+<section ng-if="iC.statoIstanza === 0">
+    <div class="u-layout-wide u-layoutCenter u-layout-withGutter u-padding-all-xl u-padding-r-top u-padding-bottom-xxl">
+
+          <div ng-if="!loggedUserVoid()">
+
+            <div class="Prose">
+                <!-- <h2 class="u-text-h3">Autenticazione SPID/FEDERA effettuata correttamente.</h2> -->
+                <h2 class="u-text-h3">Dati di identificazione per la presente istanza provenienti dall'autenticazione SPID/FEDERA:</h2>
+
+                    <table class="Table Table--withBorder Table--compact">
+                        <tbody>
+                            <tr>
+                                    <td><b>Nome<b></td>
+                                    <td>{{iC.loggedUser.nome}}</td>
+                                    <td><b>Cognome<b></td>
+                                    <td>{{iC.loggedUser.cognome}}</td>
+                              </tr>
+                              <tr>
+                                    <td><b>Codice Fiscale<b></td>
+                                    <td>{{iC.loggedUser.codiceFiscale}}</td>
+                                    <td><b>Data Nascita<b></td>
+                                    <td>{{iC.loggedUser.dataNascita}}</td>
+                              </tr>
+
+                       
+                            </tbody>
+                       </table>
+                       
+                       
+                       <div class="Prose Alert Alert--error" role="alert">
+                       <p class="u-text-r-m"><b>ATTENZIONE!</b> Qualora i dati indicati NON fossero corretti, è necessario disconnettersi dall'account SPID/FEDERA ed annullare l'invio del modulo utilizzando il bottone sottostante, altrimenti si può procedere alla compilazione</p>
+                        <button class="Button Button--default u-text-r-xs u-inlineBlock btn-block" ng-click="logout('')">
+                            ESCI DA ACCOUNT SPID/FEDERA
+                        </button>
+
+                        <p><b>N.B. il presente modulo deve essere compilato entro:</b> {{iC.loggedUser.timeoutLogin}}</p>
+                       </div>
+                       
+
+
+                 
+
+            </div>
+               
+              
+              <hr/>
+              
+          </div>
+
+
+          <formly-error-summary form="vm.form" fields="vm.fields"></formly-error-summary>
+          <form ng-submit="inviaDati()" name="vm.form" novalidate>
+            <formly-form model="vm.model" fields="vm.fields" options="vm.options" form="vm.form">
+              <button type="submit" 
+                      class="Button Button--default u-text-r-xs u-inlineBlock btn-block" 
+                      ng-disabled="vm.form.$invalid">Invia i dati</button>
+            </formly-form>
+          </form>
+
+      
+
+          <div ng-if="iC.formDebug">
+
+            <p>Form Data</p>
+            <pre>{{vm.model | json}}</pre>
+            <p>Form Error</p>
+            <pre>{{vm.errors | json}}</pre>
+
+          </div>
+    </div>
+</section>
+
+
+<div ng-if="iC.contattiFooter">
+    <h3 class="u-text-h3 u-padding-r-top">Contatti:</h3>
+   <p>{{iC.contattiFooter}}</p>
+</div>  
+  
+ 
+<section ng-if="iC.statoIstanza === 200" class="Alert Alert--success">
+    <div class="u-layout-wide u-layoutCenter u-layout-withGutter u-padding-all-xl u-padding-r-top u-padding-bottom-xxl">
+        
+        <img class="img-responsive center-block" ng-src="{{iC.logoRicevuta}}"> 
+        
+
+        <h3 class="u-text-h3 u-padding-r-top">Comune di Rimini - Notifica ricezione istanza</h3>
+
+        <p>{{iC.successTxtMsg}}</p>
+                 
+        <h3 class="u-text-h3 u-padding-r-top">Riferimenti di protocollo</h3>
+
+        <p>Anno:<b>{{iC.successHtmlMsg.annoProtocollo}}</b></p>
+        <p>Numero:<b>{{iC.successHtmlMsg.numeroProtocollo}}</b></p>
+        <p>Data:<b>{{iC.successHtmlMsg.dataProtocollo }}</b></p>
+    
+        <h3 class="u-text-h3 u-padding-r-top">Riepilogo dati inseriti:</h3>
+        
+        <table border="1">
+        <tr ng-repeat="item in iC.successMsg">
+            <td>{{item.desc}}: {{item.value}}</td>
+        </tr>
+       </table>
+        
+       <button type="submit" 
+        class="Button Button--default u-text-r-xs u-inlineBlock btn-block" 
+        ng-click="apriAnteprimaStampa()"
+        >Stampa ricevuta</button>
+
+    </div>
+</section>
+
+
+<div ng-if="iC.statoIstanza > 200" class="Alert Alert--error">
+        <h1 class="u-text-h2">{{iC.errorTitle}} - {{iC.statoIstanza}}</h1>
+        <p class="u-text-r-m u-padding-r-bottom">{{iC.errorMsg}}</p>
+        <p>Errore di sistema già segnalato ai gestori del sistema informativo</p>
+        <p>{{iC.reqId}}</p>
+        <a class="Button Button--default u-text-r-xs" ng-click="caricaImpostazioni({id: iC.idIstanza})">Riapri il modulo</a>
+</div>
+
+<div ng-if="iC.statoIstanza === 198" class="Alert Alert--warning">
+    <h1 class="u-text-h2">Caricamento dati ...</h1>
+</div>
+
+<div ng-if="iC.statoIstanza === 199" class="Alert Alert--warning">
+    <h1 class="u-text-h2">Inoltro istanza in corso...</h1>
+    <img src="images/spinner.gif">
+    <p class="u-text-r-m u-padding-r-bottom">Attendere ... </p>
+</div>
+   
