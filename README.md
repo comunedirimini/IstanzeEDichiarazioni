@@ -42,10 +42,17 @@ Applicazione del framework con reingegnerizzazione del procedimento:
 -	Al cittadino viene inviata automaticamente una notifica di avvio di procedimento con il protocollo e tutte le informazioni necessarie per eventuali chiarimenti
 -	Successivamente al cittadino vengono inviate le notifiche sullo stato di avanzamento e completamento del procedimento
 
-
-## Tecnologie
+## Tecnologie utilizzate
 
 - Le Tecnologie utilizzate per il progetto sono AngularJs per il client e NodeJs per il server
+
+## Architettura
+
+L'architettura della piattaforma si compone di due parti:
+
+- La parte client realizzata con AngularJS permette la visualizzazione e la gestione di un form articolato per l'acquisizione dei dati da parte dell'utente. La web app è stata sviluppata per l'ambiente mobile secondo le specifiche Agid.
+
+- La parte server è realizzata in NodeJs. Per ogni form è presente un file di configurazione che ne descrive i dati da raccogliere e 
 
 ## Stato di avanzamento del progetto
 
@@ -69,18 +76,13 @@ Applicazione del framework con reingegnerizzazione del procedimento:
 
 ## Documentazione per installazione ed utilizzo
 
-- Work in progress... [documentazione](https://github.com/paulodiff/istanzedigitali/wiki)
-
-## Screenshot
-
-[![Schermata demo 1](http://pmlab.comune.rimini.it/FORUMPA1.PNG)]
-[![Schermata demo 2](http://pmlab.comune.rimini.it/FORUMPA2.PNG)]
-[![Schermata demo 3](http://pmlab.comune.rimini.it/FORUMPA3.PNG)]
-[![Schermata demo 4](http://pmlab.comune.rimini.it/FORUMPA4.PNG)]
+- Work in progress... [documentazione](https://github.com)
 
 
-# Caratteristiche
 
+# Caratteristiche principali
+
+La piattaforma
 Conforme linee guida agid / Sito e sicurezza
 
 - no db
@@ -96,9 +98,7 @@ Sicurezza controllo server di tutti i parametri esistenza/formato/dimensione
 Sicurezza jwt-token
 Sicurezza recptchaGoogle
 
-* maxIstanze giornaliere
 
 * Statistiche 
-* logstash su elastichSearch via Log4js
 
 
