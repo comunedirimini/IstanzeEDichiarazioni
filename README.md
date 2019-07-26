@@ -68,6 +68,13 @@ L'architettura della piattaforma si compone di due parti:
 - Gestione della memorizzazione delle istanze parziali (in sviluppo)
 - Open Source (fatto)
 
+## Esempio di modulo richiesta numerazione civica
+
+![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+
+![Modulo parte prima](https://raw.githubusercontent.com/comunedirimini/IstanzeEDichiarazioni/master/ISTANZE_01.PNG)
+![Modulo parte seconda](https://raw.githubusercontent.com/comunedirimini/IstanzeEDichiarazioni/master/ISTANZE_02.PNG)
+
 ## Informazioni 
 
 - Comune di Rimini - Ruggero Ruggeri ruggero.ruggeri AT comune.rimini.it 
