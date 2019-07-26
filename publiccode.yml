@@ -1,0 +1,53 @@
+# This repository adheres to the publiccode.yml standard by including this 
+# metadata file that makes public software easily discoverable.
+# More info at https://github.com/italia/publiccode.yml
+
+publiccodeYmlVersion: '0.2'
+name: Istanze Digitali
+releaseDate: '2019-07-26'
+url: 'https://github.com/comunedirimini/IstanzeEDichiarazioni'
+applicationSuite: Istanze Digitali
+softwareVersion: true
+developmentStatus: stable
+softwareType: standalone/web
+platforms:
+  - web
+  - linux
+  - windows
+usedBy:
+  - Comune di Rimini
+categories:
+  - application-development
+logo: 'https://www.comune.rimini.it/logo_rn_0.png'
+maintenance:
+  type: none
+  contacts:
+    - name: Ruggero Ruggeri
+      email: ruggero.ruggeri@comune.rimini.it
+legal:
+  license: AGPL-3.0-or-later
+localisation:
+  localisationReady: false
+  availableLanguages:
+    - it
+it:
+  riuso:
+    codiceIPA: c_h294
+  piattaforme:
+    spid: true
+description:
+  it:
+    longDescription: >
+    Il progetto implementa un framework agile e componibile per “abilitare” ad una serie di funzionalità previste dal CAD i piccoli procedimenti digitali della PA che non ci riescono. Nella pubblica amministrazione molti procedimenti interni sono gestiti attraverso gestionali obsoleti, fogli di calcolo o file e cartelle. Inoltre spesso vi sono procedimenti che nascono e muoiono velocemente. Per questo tipo di procedimenti risulta difficile se non impossibile disporre di una interfaccia web per raccogliere le istanze in ingresso, essere integrati con SPID e PagoPA, essere integrati con il gestore documentale interno, inviare le notifiche sullo stato del procedimento in maniera automatica al cittadino e raccogliere i dati in maniera strutturata. 
+    localisedName: Istanze Digitali
+    genericName: Piattaforma per le Istanze Digitali
+    shortDescription: Istanze Digitali
+    documentation: 'https://github.com/comunedirimini/IstanzeEDichiarazioni'
+    apiDocumentation: 'https://github.com/comunedirimini/IstanzeEDichiarazioni'
+    features:
+      - Integrazione con SPID
+      - Integrazione con FEDERA
+      - Interfacce web che seguono le specifiche di design.italia.it
+      - Interfaccia di accoglimento istanze facilmente personalizzabile
+      - Invio notifiche al cittadino sullo stato dell'istanza presentata
+      - Interfacciamento dei flussi dati con i gestionali dell'ufficio
