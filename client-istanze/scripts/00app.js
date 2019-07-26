@@ -56,7 +56,7 @@ angular.module('myApp', [//'ionic',
 // config uiGmapgoogle-maps
 .config(function(uiGmapGoogleMapApiProvider) {
     uiGmapGoogleMapApiProvider.configure({
-        key: 'AIzaSyCbkb0dHm-FqvVSf44vd8hr4l6rDHRxGzE',
+        key: '',
         v: '3.17',
         libraries: 'weather,geometry,visualization'
     });
@@ -495,7 +495,7 @@ angular.module('myApp', [//'ionic',
     });
 
     $authProvider.github({
-      clientId: '57c6b2d67e6e3cb24640',
+      clientId: '',
       scope: ['user:email']
     });
 
@@ -507,7 +507,7 @@ angular.module('myApp', [//'ionic',
 
     $authProvider.google({
       //clientId: 'Google Client ID'
-      clientId: '572820000251-dqu77iuc6t37c5jm2r3p8fug6j0mbjh7.apps.googleusercontent.com'
+      clientId: ''
     });
 
     // No additional setup required for Twitter
