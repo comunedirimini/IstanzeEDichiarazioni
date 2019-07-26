@@ -7,7 +7,7 @@ name: Istanze Digitali
 releaseDate: '2019-07-26'
 url: 'https://github.com/comunedirimini/IstanzeEDichiarazioni'
 applicationSuite: Istanze Digitali
-softwareVersion: true
+softwareVersion: '1.0' 
 developmentStatus: stable
 softwareType: standalone/web
 platforms:
@@ -18,7 +18,7 @@ usedBy:
   - Comune di Rimini
 categories:
   - application-development
-logo: 'https://www.comune.rimini.it/logo_rn_0.png'
+logo: logo/logo_rn_0.png
 maintenance:
   type: none
   contacts:
@@ -37,8 +37,18 @@ it:
     spid: true
 description:
   it:
-    longDescription: >
-    Il progetto implementa un framework agile e componibile per “abilitare” ad una serie di funzionalità previste dal CAD i piccoli procedimenti digitali della PA che non ci riescono. Nella pubblica amministrazione molti procedimenti interni sono gestiti attraverso gestionali obsoleti, fogli di calcolo o file e cartelle. Inoltre spesso vi sono procedimenti che nascono e muoiono velocemente. Per questo tipo di procedimenti risulta difficile se non impossibile disporre di una interfaccia web per raccogliere le istanze in ingresso, essere integrati con SPID e PagoPA, essere integrati con il gestore documentale interno, inviare le notifiche sullo stato del procedimento in maniera automatica al cittadino e raccogliere i dati in maniera strutturata. 
+    longDescription: |
+      Il progetto implementa un framework agile e componibile per “abilitare” ad
+       una serie di funzionalità previste dal CAD i piccoli procedimenti digitali
+       della PA che non ci riescono. Nella pubblica amministrazione molti
+       procedimenti interni sono gestiti attraverso gestionali obsoleti, fogli di
+       calcolo o file e cartelle. Inoltre spesso vi sono procedimenti che nascono
+       e muoiono velocemente. Per questo tipo di procedimenti risulta difficile se
+       non impossibile disporre di una interfaccia web per raccogliere le istanze
+       in ingresso, essere integrati con SPID e PagoPA, essere integrati con il
+       gestore documentale interno, inviare le notifiche sullo stato del
+       procedimento in maniera automatica al cittadino e raccogliere i dati in
+       maniera strutturata. 
     localisedName: Istanze Digitali
     genericName: Piattaforma per le Istanze Digitali
     shortDescription: Istanze Digitali
