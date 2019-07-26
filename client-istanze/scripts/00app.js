@@ -63,6 +63,7 @@ angular.module('myApp', [//'ionic',
 })
 */
 
+
 // ui.router configuration
 .config(  ['$stateProvider', '$urlRouterProvider', 
   function($stateProvider,    $urlRouterProvider) {
