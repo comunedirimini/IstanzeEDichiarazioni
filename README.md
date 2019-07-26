@@ -85,27 +85,3 @@ L'architettura della piattaforma si compone di due parti:
 
 - Work in progress... [documentazione](https://github.com)
 
-
-
-# Caratteristiche principali
-
-La piattaforma
-Conforme linee guida agid / Sito e sicurezza
-
-- no db
-- solo file system
-
-Parametrizzabile sulle descrizioni del form
-Parametrizzabile sul Documentale (tipoDoc, Oggetto,Fascicolo ecc., scrivania)
-Parametrizzabile n. file allegati
-Parametrizzabile email di cortesia (messaggio)
-
-Sicurezza controllo client di tutti i parametri esistenza/formato/dimensione
-Sicurezza controllo server di tutti i parametri esistenza/formato/dimensione
-Sicurezza jwt-token
-Sicurezza recptchaGoogle
-
-
-* Statistiche 
-
-
